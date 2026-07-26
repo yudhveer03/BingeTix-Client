@@ -1,0 +1,8 @@
+.trailer-section{
+    display: flex;
+    flex-direction: row;
+    gap:10rem;   
+    /* align-items: center    ; */
+    justify-content: center;
+}
+

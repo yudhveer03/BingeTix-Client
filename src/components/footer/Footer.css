@@ -1,0 +1,268 @@
+.footer {
+  width: 100%;
+  background: linear-gradient(to bottom, #111, #000);
+  color: #fff;
+  padding: 60px 8% 30px;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  margin-top: 50px;
+}
+
+/* =========================
+   TOP SECTION
+========================= */
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+  gap: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.brand h2 {
+  color: #ff3b30;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.brand p {
+  color: #bdbdbd;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+
+.footer-col h3 {
+  color: #ff3b30;
+  margin-bottom: 18px;
+  font-size: 1.1rem;
+}
+
+/* =========================
+   LINKS
+========================= */
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 12px;
+  color: #cfcfcf;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.footer-col ul li:hover {
+  color: #ff3b30;
+  transform: translateX(5px);
+}
+
+/* =========================
+   SOCIAL ICONS
+========================= */
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.social-icons svg {
+  font-size: 18px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.social-icons svg:hover {
+  background: #ff3b30;
+  color: white;
+  transform: translateY(-4px);
+}
+
+/* =========================
+   NEWSLETTER
+========================= */
+
+.newsletter {
+  display: flex;
+  margin-top: 10px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.newsletter input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  padding: 14px;
+  font-size: 14px;
+}
+
+.newsletter button {
+  border: none;
+  background: #ff3b30;
+  color: white;
+  padding: 0 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.newsletter button:hover {
+  background: #e62f24;
+}
+
+/* =========================
+   FEATURES SECTION
+========================= */
+
+.footer-features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  padding: 40px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.feature {
+  text-align: center;
+  padding: 20px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.feature:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-5px);
+}
+
+.feature h4 {
+  margin: 12px 0;
+  font-size: 1rem;
+}
+
+.feature p {
+  color: #bdbdbd;
+  font-size: 0.9rem;
+}
+
+.feature {
+  font-size: 2rem;
+}
+
+/* =========================
+   FOOTER BOTTOM
+========================= */
+
+.footer-bottom {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom p {
+  color: #bdbdbd;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   PAYMENT TAGS
+========================= */
+
+.payments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.payments span {
+  background: rgba(255, 59, 48, 0.15);
+  color: #ff3b30;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.payments span:hover {
+  background: #ff3b30;
+  color: white;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 992px) {
+  .footer-top {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 50px 20px 25px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-features {
+    grid-template-columns: 1fr;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .newsletter {
+    flex-direction: column;
+    background: transparent;
+    gap: 10px;
+  }
+
+  .newsletter input {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .newsletter button {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .payments {
+    justify-content: center;
+  }
+}

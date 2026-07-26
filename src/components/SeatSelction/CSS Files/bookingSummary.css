@@ -1,0 +1,39 @@
+.summary-card h2 {
+  margin-bottom: 20px;
+}
+
+.selected-seats {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.selected-seat {
+  background: crimson;
+  padding: 8px 15px;
+  border-radius: 8px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0;
+}
+
+.total {
+  color: #00ff66;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.payment-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 15px;
+  border: none;
+  background: crimson;
+  color: white;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+}

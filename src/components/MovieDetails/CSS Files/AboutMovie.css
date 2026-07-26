@@ -1,0 +1,101 @@
+/* ABOUT MOVIES CSS */
+
+.movie-details{
+    width:90%;
+    margin:120px auto;
+
+    display:grid;
+    grid-template-columns:300px 1fr;
+    height: 500px;
+    gap:50px;
+
+    color:white;
+}
+
+/* posterr */
+
+.poster img{
+    width:100%;
+    height:450px;
+    object-fit:cover;
+
+    border-radius:15px;
+}
+
+/* Othr info  */
+
+.movie-info{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.movie-info h1{
+    font-size:3rem;
+    color:rgb(238, 7, 7);
+}
+
+.rating{
+    color:gold;
+    font-size:1.5rem;
+    font-weight:bold;
+}
+
+.genre-tags{
+    display:flex;
+    gap:10px;
+}
+
+.genre-tags span{
+    background:#1e293b;
+    padding:10px 15px;
+    border-radius:8px;
+}
+
+.duration{
+    color:#104687;
+}
+
+.description{
+    max-width: 350px;
+    color:#104687;
+    line-height:1.8;
+}
+
+.other-info{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    max-width: 350px;
+}
+
+.other-info p{
+    color:#104687;
+}
+
+.watch-btn{
+    width:220px;
+    padding:15px;
+
+    border:none;
+    border-radius:10px;
+
+    background:#ef4444;
+    color:white;
+
+    font-size:16px;
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.book-btn{
+    color: whitesmoke;
+    background-color: #ef4444;
+    height: 4rem;
+    width: 10rem;
+    border-radius: 15rem;
+}
+
+
+

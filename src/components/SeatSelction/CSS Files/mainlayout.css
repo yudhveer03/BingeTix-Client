@@ -1,0 +1,96 @@
+.seat-page {
+  min-height: 100vh;
+  background: #050816;
+  color: white;
+  padding: 20px;
+}
+
+/* Top Section */
+
+.top-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.movie-card,
+.booking-panel,
+.seat-container,
+.summary-card {
+  background: #091225;
+  border: 1px solid #1e2a45;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+/* Movie Info */
+
+.movie-card {
+  display: flex;
+  gap: 20px;
+}
+
+.movie-poster {
+  width: 180px;
+  height: 260px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.movie-details h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.rating {
+  color: gold;
+  font-size: 1.2rem;
+}
+
+.genre {
+  display: inline-block;
+  background: #18253d;
+  padding: 8px 15px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* Show Time Buttons */
+
+.time-btns,
+.date-btns {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.time-btns button,
+.date-btns button {
+  background: #101b31;
+  color: white;
+  border: 1px solid #273654;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.time-btns button:hover,
+.date-btns button:hover {
+  background: crimson;
+}
+
+/* Screen */
+
+.screen {
+  text-align: center;
+  margin: 30px 0;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.screen-line {
+  height: 8px;
+  background: linear-gradient(to right, transparent, #61dafb, transparent);
+  border-radius: 100%;
+  margin-top: 10px;
+}

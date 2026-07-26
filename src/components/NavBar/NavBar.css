@@ -1,0 +1,152 @@
+.navbar {
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 96%;
+  max-width: 1500px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 16px 40px;
+
+  z-index: 1000;
+
+  background: rgba(10, 10, 10, 0.75);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(255, 59, 48, 0.12);
+}
+
+/* Logo */
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #ff3b30;
+}
+
+.logo span {
+  color: white;
+}
+
+/* Navigation Pill */
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+
+  list-style: none;
+
+  padding: 16px 40px;
+
+  position: relative;
+
+  background: rgba(20, 20, 20, 0.8);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 999px;
+
+  backdrop-filter: blur(25px);
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+
+  font-weight: 600;
+  font-size: 15px;
+
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ff3b30;
+}
+
+/* Right Side */
+
+.right-nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Search */
+
+.search {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.08);
+
+  color: white;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search:hover {
+  background: #ff3b30;
+  transform: translateY(-2px);
+}
+
+/* Login Button */
+
+.login-btn {
+  border: none;
+
+  padding: 13px 30px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    135deg,
+    #ff4d3d,
+    #ff3b30
+  );
+
+  color: white;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  box-shadow: 0 5px 20px rgba(255,59,48,0.35);
+}
+
+.login-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 25px rgba(255,59,48,0.45);
+}

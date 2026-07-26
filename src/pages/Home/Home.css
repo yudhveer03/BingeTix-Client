@@ -1,0 +1,30 @@
+.movie-slider{
+    display: flex;
+    height: auto;
+    border: 3px solid black;
+    gap: 5px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 8px;
+}
+
+.movie-slider::-webkit-scrollbar{
+    display:none;
+}
+
+h3{
+    color: rgb(8, 20, 42);
+    font-size: 20px;
+}
+
+.card p{
+    font-weight: 800;
+    font-size: 10px;
+    gap: 2px;
+    margin: 2px 0px;
+}
+
+.card-text{
+    display: flex;
+    flex-direction: column;
+}
