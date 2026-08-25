@@ -27,7 +27,7 @@ const TicketSummary = () => {
         <div className="ticket-page-container">
             <div className="ticket-card">
                 <div className="ticket-header">
-                    <span className="success-badge">✅ BOOKING CONFIRMED</span>
+                    <span className="success-badge">BOOKING CONFIRMED</span>
                     <h2>{booking.movieId?.title}</h2>
                 </div>
 
@@ -40,7 +40,7 @@ const TicketSummary = () => {
                         <p><strong>Total Paid:</strong> ₹{booking.totalAmount}</p>
                     </div>
 
-                    {/* QR Code generator API */}
+   
                     <div className="qr-code-box">
                         <img
                             src={`https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=${booking._id}`}

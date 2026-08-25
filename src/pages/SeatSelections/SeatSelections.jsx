@@ -61,7 +61,7 @@ const SeatSelection = () => {
         key: key_id,
         amount: order.amount,
         currency: order.currency,
-        name: "FilmCity Tickets",
+        name: "BingeTix Tickets",
         description: `Booking for ${movie.title}`,
         order_id: order.id,
         handler: async function (response) {
@@ -85,7 +85,7 @@ const SeatSelection = () => {
         },
         prefill: {
           name: "Movie Fan",
-          email: "user@filmcity.com",
+          email: "user@BingeTix.com",
           contact: "9999999999"
         },
         theme: { color: "#ef4444" }
