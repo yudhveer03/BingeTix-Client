@@ -22,19 +22,18 @@ const Footer = () => {
             enjoy the <br></br> ultimate big screen experience.
           </p>
 
-          <div className="social-icons">
+          {/* <div className="social-icons">
             <FaFacebookF />
             <FaInstagram />
             <FaXTwitter />
             <FaYoutube />
-          </div>
+          </div> */}
         </div>
 
         <div className="footer-col">
           <h3>Book Tickets</h3>
           <ul>
-            <li>Now Showing</li>
-            <li>Coming Soon</li>
+          
             <li>Top Rated</li>
             <li>Offers & Discounts</li>
             <li>Gift Cards</li>
@@ -47,8 +46,7 @@ const Footer = () => {
             <li>PVR</li>
             <li>INOX</li>
             <li>Cinepolis</li>
-            <li>IMAX</li>
-            <li>4DX</li>
+            
           </ul>
         </div>
 
@@ -56,9 +54,7 @@ const Footer = () => {
           <h3>Support</h3>
           <ul>
             <li>FAQs</li>
-            <li>Booking Guide</li>
             <li>Refund Policy</li>
-            <li>Payments</li>
             <li>Contact Us</li>
           </ul>
         </div>
@@ -76,43 +72,18 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="footer-features">
-        <div className="feature">
-          🎟️
-          <h4>Easy Booking</h4>
-          <p>Book tickets in a few clicks.</p>
-        </div>
-
-        <div className="feature">
-          💺
-          <h4>Best Seats</h4>
-          <p>Choose your preferred seats.</p>
-        </div>
-
-        <div className="feature">
-          🔥
-          <h4>Exclusive Offers</h4>
-          <p>Save more on every booking.</p>
-        </div>
-
-        <div className="feature">
-          🔒
-          <h4>Secure Payments</h4>
-          <p>100% safe transactions.</p>
-        </div>
-      </div>
-
+     
       <div className="footer-bottom">
         <p>© 2026 BingeTix. All Rights Reserved.</p>
         <br></br>
 
-        <div className="payments">
+        {/* <div className="payments">
           <span>VISA</span>
           <span>MasterCard</span>
           <span>UPI</span>
           <span>Paytm</span>
           <span>GPay</span>
-        </div>
+        </div> */}
       </div>
     </footer>
   );

@@ -10,9 +10,9 @@ const Front_poster = () => {
     >
       <div className="hero-overlay">
         <div className="hero-content">
-          <span className="hero-tag">
+          {/* <span className="hero-tag">
             🎬 India's Favourite Movie Booking Platform
-          </span>
+          </span> */}
 
           <h1>
             THE MOVIE <br />

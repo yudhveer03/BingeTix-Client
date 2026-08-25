@@ -1,58 +1,60 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import Front_poster from '../../components/frontPoster/Front_poster'
-import Movies from '../AllMovies/Movies'
+import Front_poster from '../../components/frontPoster/Front_poster';
 import Movie_Cards from '../../components/MovieCard/Movie_Cards';
-import './Home.css'
+import './Home.css';
 
 const Home = () => {
+  const [movies, setMovies] = useState([]);
+  const [isLoading, setIsLoading] = useState(true); // Added loading state
+  const [error, setError] = useState(null); // Added error state
 
-  const [movies, setmovies] = useState([])
-
-  const fetchMovies = async () => {
-    try {
-      const response = await axios.get('https://bingetix-server.onrender.com/api/movie')
-      console.log("Data Received", response.data);
-      setmovies(response.data);
-    }
-    catch (err) {
-      console.log("API fetch failed", err);
-
-    }
-  }
   useEffect(() => {
+    const fetchMovies = async () => {
+      try {
+        const response = await axios.get('https://bingetix-server.onrender.com/api/movie');
+        setMovies(response.data);
+        setIsLoading(false); // Turn off loading when data arrives
+      } catch (err) {
+        console.error("API fetch failed", err);
+        setError("Failed to load movies. Please try again later.");
+        setIsLoading(false); // Turn off loading even if there is an error
+      }
+    };
+
     fetchMovies();
-  }, [])
-
-
+  }, []);
 
   return (
-    <div>
+    <div className="home-container">
       <Front_poster />
-      <br></br>
-      <br></br>
 
-      <h3>Now Showing</h3>
+      <div className="now-showing-section">
+        <h3 className="section-title">Now Showing</h3>
 
-
-      <div className='movie-slider'>
-        {movies.map(movie => (
-          <Movie_Cards
-            key={movie._id}
-            id={movie._id}
-            title={movie.title}
-            image={movie.image}
-            rating={movie.rating}
-            genre={movie.genre}
-            time={movie.time}
-          />
-        ))}
-
+        {/* Conditional Rendering based on state */}
+        {isLoading ? (
+          <h4 className="loading-text">Loading blockbuster movies...</h4>
+        ) : error ? (
+          <p className="error-text">{error}</p>
+        ) : (
+          <div className="movie-slider">
+            {movies.map(movie => (
+              <Movie_Cards
+                key={movie._id}
+                id={movie._id}
+                title={movie.title}
+                image={movie.image}
+                rating={movie.rating}
+                genre={movie.genre}
+                time={movie.time}
+              />
+            ))}
+          </div>
+        )}
       </div>
-
     </div>
+  );
+};
 
-  )
-}
-
-export default Home
+export default Home;

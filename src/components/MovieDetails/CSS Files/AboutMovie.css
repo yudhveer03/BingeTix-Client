@@ -47,18 +47,18 @@
 }
 
 .genre-tags span{
-    background:#1e293b;
+    background:#4a87e9;
     padding:10px 15px;
     border-radius:8px;
 }
 
 .duration{
-    color:#104687;
+    color:#abc6e8;
 }
 
 .description{
     max-width: 350px;
-    color:#104687;
+    color:#abc6e8;
     line-height:1.8;
 }
 
@@ -70,7 +70,7 @@
 }
 
 .other-info p{
-    color:#104687;
+    color:#abc6e8;
 }
 
 .watch-btn{

@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './SeatSelection.css';
-
-// 1. Import our newly created Presentational Components
 import ShowSelector from './ShowSelector';
 import SeatMatrix from './SeatMatrix';
 import BookingSummary from './BookingSummary';
@@ -109,7 +107,7 @@ const SeatSelection = () => {
         }
     };
 
-    // --- RENDER ---
+    // 
     if (movie === null) return <h2 className="loading-text">Loading...</h2>;
 
     return (
@@ -126,7 +124,7 @@ const SeatSelection = () => {
 
             {/* Conditional UI Routing */}
             {!selectedShow ? (
-                // 2. Pass data DOWN to ShowSelector, and listen for the selection UP
+                // 2. ShowSelector
                 <ShowSelector
                     shows={shows}
                     onSelectShow={(show) => setSelectedShow(show)}
@@ -141,14 +139,14 @@ const SeatSelection = () => {
                     </button>
 
                     <div className="seat-booking-wrapper">
-                        {/* 3. Render the Seat Matrix */}
+                        {/* Render the Seat Matrix */}
                         <SeatMatrix
                             bookedSeats={bookedSeats}
                             selectedSeats={selectedSeats}
                             onSeatClick={handleSeatClick}
                         />
 
-                        {/* 4. Render the Booking Summary */}
+                        {/* Render the Booking Summary */}
                         <BookingSummary
                             movieTitle={movie.title}
                             theatre={selectedShow.theatre}

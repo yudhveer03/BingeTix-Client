@@ -1,16 +1,25 @@
  @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@1,900&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap');
 
-*{
+/* *{
     margin: 0;
     padding: 0;
     font-family: "Lato", sans-serif;
-    /* font-weight: 900; */
-    scrollbar-color: #787777 #1e1e1e;
-    font-style: italic;
-} 
+    font-weight: 900; 
+    /* scrollbar-color: #787777 #1e1e1e; */
+    /* font-style: italic; */
+ 
 
  /* body{
     color: white;
     background-color: #09090B;
 }  */
+
+ body {
+     background-color: #050816;
+     color: white;
+     margin: 0;
+     padding: 0;
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+ }
   
