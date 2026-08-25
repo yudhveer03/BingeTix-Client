@@ -9,6 +9,7 @@ import SeatLayout from "./pages/SeatSelections/SeatSelections.jsx"
 import Footer from "./components/footer/Footer.jsx"
 import SeatSelection from './pages/SeatSelections/SeatSelections.jsx'
 import Ticket from './pages/TicketSummary/Ticket.jsx';
+import Releases from "./pages/Releases/Releases.jsx";
 
 const App = () => {
 
@@ -28,6 +29,7 @@ const App = () => {
           <Route path='/movies/:id/:date' element={<SeatLayout />} />
           <Route path='/seatSelection/:id' element={<SeatSelection />} />
           <Route path='/booking-success/:bookingId' element={<Ticket />} />
+          <Route path='/releases' element={<Releases />} />
         </Routes>
 
         {/* Footer hidden on admin routes */}
