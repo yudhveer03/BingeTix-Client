@@ -18,6 +18,7 @@ const App = () => {
   return (
     <>
       <Toaster />
+      <AuthModal/>
       <div>
         {/* Navigation bar hidden on admin routes */}
         {!isAdminRoute && <NavBar />}

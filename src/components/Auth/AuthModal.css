@@ -1,0 +1,222 @@
+/* --- OVERLAY & BACKDROP --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(6px);
+    /* Creates the blurred background effect */
+    -webkit-backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    /* Ensures it sits above your Navbar */
+}
+
+/* --- MAIN MODAL BOX --- */
+.modal-content {
+    background-color: #091225;
+    border: 1px solid #1e2a45;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 400px;
+    padding: 35px 30px;
+    position: relative;
+    color: #ffffff;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(239, 68, 68, 0.05);
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- CLOSE BUTTON --- */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+    color: #ef4444;
+}
+
+/* --- HEADER --- */
+.modal-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.modal-header h2 {
+    color: #ff4d4d;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.modal-header p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* --- FORM & INPUTS --- */
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-group label {
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    font-weight: 600;
+}
+
+.input-group input {
+    background-color: #050816;
+    border: 1px solid #1e2a45;
+    padding: 12px 15px;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.input-group input:focus {
+    border-color: #ef4444;
+}
+
+.input-group input::placeholder {
+    color: #475569;
+}
+
+/* --- BUTTONS --- */
+.btn-primary {
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover {
+    background-color: #dc2626;
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #1e2a45;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #1e2a45;
+    border-color: #334155;
+}
+
+/* --- DIVIDER --- */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 25px 0;
+    color: #475569;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #1e2a45;
+}
+
+.divider::before {
+    margin-right: 15px;
+}
+
+.divider::after {
+    margin-left: 15px;
+}
+
+/* --- FOOTER TOGGLE --- */
+.modal-footer-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+.modal-footer-text span {
+    color: #ef4444;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.modal-footer-text span:hover {
+    text-decoration: underline;
+}
+
+/* --- BACK BUTTON (For OTP screens) --- */
+.btn-back {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 15px;
+    padding: 0;
+}
+
+.btn-back:hover {
+    color: white;
+}   
