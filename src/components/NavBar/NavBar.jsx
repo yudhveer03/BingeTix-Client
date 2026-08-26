@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 import "./NavBar.css";
+import { useAuthModal } from "../../context/AuthModalContext";
 
 const Navbar = () => {
+  const { openModal } = useAuthModal();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -49,7 +51,7 @@ const Navbar = () => {
         <button className="search-btn" aria-label="Search">
           <FaSearch />
         </button>
-        <button className="login-btn">
+        <button className="login-btn" onClick={openModal('default')}>
           Login
         </button>
       </div>
