@@ -51,7 +51,7 @@ const Navbar = () => {
         <button className="search-btn" aria-label="Search">
           <FaSearch />
         </button>
-        <button className="login-btn" onClick={openModal('default')}>
+        <button className="login-btn" onClick={openModal('otp')}>
           Login
         </button>
       </div>
