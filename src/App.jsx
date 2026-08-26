@@ -10,6 +10,7 @@ import Footer from "./components/footer/Footer.jsx"
 import SeatSelection from './pages/SeatSelections/SeatSelections.jsx'
 import Ticket from './pages/TicketSummary/Ticket.jsx';
 import Releases from "./pages/Releases/Releases.jsx";
+import AuthModal from './components/Auth/AuthModal.jsx'
 
 const App = () => {
 
