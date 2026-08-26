@@ -1,27 +1,26 @@
-import { useState, createContext, useContext, children } from "react";
+import React, { useState, createContext, useContext } from "react";
 
 const AuthModalContext = createContext();
 
 export const AuthModalProvider = ({ children }) => {
     const [isOpen, setOpen] = useState(false);
-    const [modalView, setmodalView] = ('default');
-}
+    const [modalView, setModalView] = useState('default');
 
-const openModal = (view = 'default') => {
-    setmodalView(view);
-    setOpen(true);
+    const openModal = (view = 'default') => {
+        setModalView(view);
+        setOpen(true);
+    };
+
+    const closeModal = () => {
+        setOpen(false);
+        setModalView('default');
+    };
+
+    return (
+        <AuthModalContext.Provider value={{ isOpen, modalView, openModal, closeModal, setModalView }}>
+            {children}
+        </AuthModalContext.Provider>
+    );
 };
 
-const closeModal = () => {
-    setOpen(false);
-    setmodalView('deafult');
-
-
-return (
-    <AuthModalContext.Provider value={{ open, modalView, openModal, closeModal, setmodalView }}>
-        {children}
-    </AuthModalContext.Provider>
-
-);
-};
 export const useAuthModal = () => useContext(AuthModalContext);

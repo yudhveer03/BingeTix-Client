@@ -19,7 +19,7 @@ const App = () => {
   return (
     <>
       <Toaster />
-      <AuthModal/>
+      <AuthModal />
       <div>
         {/* Navigation bar hidden on admin routes */}
         {!isAdminRoute && <NavBar />}
@@ -38,7 +38,7 @@ const App = () => {
         {!isAdminRoute && <Footer />}
       </div>
     </>
-  )
+  );
 }
 
 export default App

@@ -104,7 +104,6 @@ const AuthModal = () => {
         /* The Overlay: Clicking this closes the modal */
         <div className="modal-overlay" onClick={closeModal}>
 
-            /* The Box: e.stopPropagation() prevents clicks inside the box from triggering the overlay's close function */
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
 
                 <button className="close-btn" onClick={closeModal}>
