@@ -6,7 +6,7 @@ const RecommMovies = () => {
 
     const [movies, setmovies] = useState([])
     useEffect(() => {
-        fetch(`${import.meta.env.VITE_API_URL}`/api/movies)
+        fetch(`${import.meta.env.VITE_API_URL}/api/movies`)
             .then(response => response.json())
             .then(data => {
                 // console.log("Data Received", data);
