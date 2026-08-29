@@ -10,7 +10,7 @@ const TicketSummary = () => {
     useEffect(() => {
         const fetchBooking = async () => {
             try {
-                const response = await axios.get(`https://bingetix-server.onrender.com/api/booking/${bookingId}`);
+                const response = await axios.get(`${ import.meta.env.VITE_API_URL }/api/booking/${bookingId}`);
                 setBooking(response.data);
             } catch (err) {
                 console.error("Error fetching ticket:", err);
@@ -40,7 +40,7 @@ const TicketSummary = () => {
                         <p><strong>Total Paid:</strong> ₹{booking.totalAmount}</p>
                     </div>
 
-   
+
                     <div className="qr-code-box">
                         <img
                             src={`https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=${booking._id}`}

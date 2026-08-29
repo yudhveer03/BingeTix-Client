@@ -12,8 +12,9 @@ import Ticket from './pages/TicketSummary/Ticket.jsx';
 import Releases from "./pages/Releases/Releases.jsx";
 import AuthModal from './components/Auth/AuthModal.jsx'
 
-const App = () => {
 
+const App = () => {
+ 
   const isAdminRoute = useLocation().pathname.startsWith('/admin')
 
   return (

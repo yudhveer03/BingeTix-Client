@@ -12,7 +12,7 @@ const Movies = () => {
     const fetchMovies = async () => {
       try {
         // FIXED: Pointing to the correct /api/movie endpoint
-        const response = await axios.get('https://bingetix-server.onrender.com/api/movie');
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/movie`);
         setMovies(response.data);
         setIsLoading(false);
       } catch (err) {

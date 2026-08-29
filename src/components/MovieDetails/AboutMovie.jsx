@@ -15,7 +15,7 @@ const AboutMovie = () => {
 
 
   useEffect(() => {
-    fetch(`https://bingetix-server.onrender.com/api/movie/${id}`)
+    fetch(`${ import.meta.env.VITE_API_URL }/api/movie/${id}`)
       .then(res => res.json())
       .then(data => setMovie(data));
   }, [id]);

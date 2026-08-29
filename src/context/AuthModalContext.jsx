@@ -10,7 +10,7 @@ export const AuthModalProvider = ({ children }) => {
         setModalView(view);
         setOpen(true);
     };
-
+    
     const closeModal = () => {
         setOpen(false);
         setModalView('default');

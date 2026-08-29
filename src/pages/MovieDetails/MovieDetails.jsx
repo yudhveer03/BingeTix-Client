@@ -13,7 +13,7 @@ const MovieDetails = () => {
   useEffect(() => {
     const fetchMovieDetails = async () => {
       try {
-        const response = await axios.get(`https://bingetix-server.onrender.com/api/movie/${id}`);
+        const response = await axios.get(`${ import.meta.env.VITE_API_URL }/api/movie/${id}`);
         setDetails(response.data);
       } catch (err) {
         console.error("Error fetching movie details:", err);

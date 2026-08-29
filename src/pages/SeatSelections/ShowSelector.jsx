@@ -29,10 +29,10 @@ const SeatSelection = () => {
 
         const fetchSeatData = async () => {
             try {
-                const movieResponse = await axios.get(`https://bingetix-server.onrender.com/api/movie/${id}`);
+                const movieResponse = await axios.get(`${ import.meta.env.VITE_API_URL }/api/movie/${id}`);
                 setMovie(movieResponse.data);
 
-                const showsResponse = await axios.get(`https://bingetix-server.onrender.com/api/movie/${id}/shows`);
+                const showsResponse = await axios.get(`${ import.meta.env.VITE_API_URL }/api/movie/${id}/shows`);
                 const data = showsResponse.data;
                 setShows(Array.isArray(data.show) ? data.show : (Array.isArray(data) ? data : []));
             } catch (err) {
@@ -58,7 +58,7 @@ const SeatSelection = () => {
         if (selectedSeats.length === 0 || !selectedShow) return;
 
         try {
-            const orderResponse = await axios.post("https://bingetix-server.onrender.com/api/booking/create-order", {
+            const orderResponse = await axios.post(`${import.meta.env.VITE_API_URL}/api/booking/create-order`, {
                 totalAmount: totalAmount
             });
 
@@ -83,7 +83,7 @@ const SeatSelection = () => {
                             totalAmount: totalAmount
                         };
 
-                        const verifyResponse = await axios.post("https://bingetix-server.onrender.com/api/booking/verify-payment", verifyData);
+                        const verifyResponse = await axios.post(`${import.meta.env.VITE_API_URL}/api/booking/verify-payment`, verifyData);
                         navigate(`/booking-success/${verifyResponse.data.booking._id}`);
                     } catch (error) {
                         console.error("Payment Verification Failed:", error);

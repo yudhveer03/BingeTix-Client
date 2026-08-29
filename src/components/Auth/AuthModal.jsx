@@ -7,7 +7,7 @@ const AuthModal = () => {
     const { isOpen, closeModal, modalView, setModalView } = useAuthModal();
 
 
-    if (!isOpen) return null;
+    if (!isOpen) return;
 
 
     const renderDefaultView = () => (
@@ -45,6 +45,7 @@ const AuthModal = () => {
                 Don't have an account? <span>Sign up</span>
             </div>
         </>
+
     );
 
 
@@ -106,7 +107,13 @@ const AuthModal = () => {
 
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
 
-                <button className="close-btn" onClick={closeModal}>
+                <button
+                    className="close-btn"
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        closeModal();
+                    }}
+                >
                     <FaTimes />
                 </button>
 

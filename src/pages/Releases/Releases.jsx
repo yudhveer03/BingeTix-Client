@@ -14,7 +14,7 @@ const Releases = () => {
     useEffect(() => {
         const fetchUpcomingMovies = async () => {
             try {
-                const response = await axios.get('https://bingetix-server.onrender.com/api/movie/upcoming');
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/movie/upcoming`);
                 setUpcomingMovies(response.data || []);
                 setIsLoading(false);
             } catch (err) {

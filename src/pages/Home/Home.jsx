@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const response = await axios.get('https://bingetix-server.onrender.com/api/movie');
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/movie`);
         setMovies(response.data);
         setIsLoading(false); // Turn off loading when data arrives
       } catch (err) {
