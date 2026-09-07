@@ -11,6 +11,7 @@ import SeatSelection from './pages/SeatSelections/SeatSelections.jsx'
 import Ticket from './pages/TicketSummary/Ticket.jsx';
 import Releases from "./pages/Releases/Releases.jsx";
 import AuthModal from './components/Auth/AuthModal.jsx'
+import Bot from './components/BingeBot/Bot.jsx'
 
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
       <div>
         {/* Navigation bar hidden on admin routes */}
         {!isAdminRoute && <NavBar />}
+      
 
         <Routes>
           <Route path='/' element={<Home />} />
@@ -34,6 +36,7 @@ const App = () => {
           <Route path='/booking-success/:bookingId' element={<Ticket />} />
           <Route path='/releases' element={<Releases />} />
         </Routes>
+        <Bot/>
 
         {/* Footer hidden on admin routes */}
         {!isAdminRoute && <Footer />}

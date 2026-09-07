@@ -1,8 +1,13 @@
 import React from "react";
 import front_picture from "../../assets/main image.png";
 import "./Front_poster.css";
+import { useNavigate } from "react-router-dom";
+
 
 const Front_poster = () => {
+
+  const navigate = useNavigate();
+
   return (
     <section
       className="hero"
@@ -26,8 +31,8 @@ const Front_poster = () => {
           </p>
 
           <div className="hero-buttons">
-            <button className="primary-btn">Browse Movies</button>
-            <button className="secondary-btn">Coming Soon</button>
+            <button className="primary-btn" onClick={()=>navigate("/movies")}>Browse Movies</button>
+            <button className="secondary-btn" onClick={()=>navigate("/releases")}>Coming Soon</button>
           </div>
 
           <div className="hero-stats">

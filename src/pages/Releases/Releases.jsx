@@ -2,11 +2,15 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { FaBell, FaPlay } from 'react-icons/fa';
 import './Releases.css';
+import { useLocation } from 'react-router-dom';
 
 const Releases = () => {
     const [upcomingMovies, setUpcomingMovies] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
+
+    const location = useLocation();
+    const [searchTerm, setSearchTerm] = useState("");
 
     const TMDB_POSTER_BASE = 'https://image.tmdb.org/t/p/w500';
     const TMDB_BACKDROP_BASE = 'https://image.tmdb.org/t/p/original';
@@ -26,6 +30,14 @@ const Releases = () => {
 
         fetchUpcomingMovies();
     }, []);
+
+    useEffect(() => {
+  if (location.state && location.state.searchQuery !== undefined) {
+    setSearchTerm(location.state.searchQuery);
+  } else if (!location.state) {
+    setSearchTerm("");
+  }
+    }, [location]);
 
     const formatDate = (dateString) => {
         if (!dateString) return "Coming Soon";
@@ -49,7 +61,13 @@ const Releases = () => {
         );
     }
 
-    const featuredMovie = upcomingMovies[0];
+    // Filter the movies based on the search term
+    const filteredMovies = upcomingMovies.filter(movie => 
+     movie.title.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+
+    // Use the filtered array for the featured banner
+    const featuredMovie = filteredMovies[0];
 
     return (
         <div className="releases-container">
@@ -86,7 +104,7 @@ const Releases = () => {
                 <h3>Arriving Next</h3>
 
                 <div className="upcoming-grid">
-                    {upcomingMovies.slice(1).map((movie) => (
+                    {filteredMovies.slice(1).map((movie) => (
                         <div key={movie.id} className="upcoming-card">
                             <div className="card-image-wrapper">
                                 <img

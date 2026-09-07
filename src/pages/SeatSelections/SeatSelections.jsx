@@ -2,10 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './SeatSelection.css';
+import {useAuth} from "../../context/AuthContext.jsx"
+import  {useAuthModal}  from '../../context/AuthModalContext';
+
+
 
 const SeatSelection = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const {openModal} = useAuthModal();
+  const {isLoggedIn} = useAuth();
 
   const [movie, setMovie] = useState(null);
   const [shows, setShows] = useState([]);
@@ -46,14 +52,24 @@ const SeatSelection = () => {
     }
   };
 
+
   const handleProceedToPayment = async () => {
+
+     if (!isLoggedIn) {
+    openModal('default');
+    return;
+  }
+
     if (selectedSeats.length === 0 || !selectedShow) return;
 
     try {
       // Frontend backend ki API call kar raha hai
+      const Token = localStorage.getItem('token');
       const orderResponse = await axios.post(`${import.meta.env.VITE_API_URL}/api/booking/create-order`, {
         totalAmount: totalAmount
-      });
+      },
+        { headers: { Authorization: 'Bearer ' + Token } },
+      );
 
       const { order, key_id } = orderResponse.data;
 
@@ -73,11 +89,18 @@ const SeatSelection = () => {
               movieId: movie._id,
               showId: selectedShow._id,
               seats: selectedSeats,
-              totalAmount: totalAmount
-            };
+              totalAmount: totalAmount,
+            }
+            
+            const Token = localStorage.getItem('token');
 
-            const verifyResponse = await axios.post(`${import.meta.env.VITE_API_URL}/api/booking/verify-payment`, verifyData);
+
+            const verifyResponse = await axios.post(`${import.meta.env.VITE_API_URL}/api/booking/verify-payment`, verifyData,
+            { headers: { Authorization: 'Bearer ' + Token } }
+            );
+
             navigate(`/booking-success/${verifyResponse.data.booking._id}`);
+            
           } catch (error) {
             console.error("Payment Verification Failed:", error);
             alert("Payment Verification Failed! Security check failed.");
